@@ -167,3 +167,9 @@ Gemfile.lock
 
 # mermaid SVG
 images/html/
+
+# bundler config
+.bundle/
+
+# package-lock.json
+package-lock.json

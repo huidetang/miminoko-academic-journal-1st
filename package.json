@@ -35,11 +35,12 @@
   "license": "CC-BY-4.0",
   "homepage": "https://github.com/huidetang/XiandaiFenshuTemplate",
   "devDependencies": {
-    "@mermaid-js/mermaid-cli": "^11.4.2",
-    "@textlint/textlint-plugin-text": "^14.6.0",
-    "@vivliostyle/cli": "^8.20.0",
-    "sass": "^1.87.0",
-    "textlint": "^14.6.0",
+    "@mermaid-js/mermaid-cli": "^11.9.0",
+    "@textlint/textlint-plugin-text": "^15.2.2",
+    "@vivliostyle/cli": "^9.6.0",
+    "cheerio": "^1.1.2",
+    "sass": "^1.91.0",
+    "textlint": "^15.2.2",
     "textlint-filter-rule-comments": "^1.2.2",
     "textlint-plugin-review": "^0.4.1",
     "textlint-rule-common-misspellings": "^1.0.1",
@@ -47,10 +48,10 @@
     "textlint-rule-max-ten": "^5.0.0",
     "textlint-rule-no-doubled-conjunctive-particle-ga": "^3.0.0",
     "textlint-rule-no-dropping-the-ra": "^3.0.0",
-    "textlint-rule-preset-smarthr": "^1.35.0",
+    "textlint-rule-preset-smarthr": "^1.36.0",
     "textlint-rule-prh": "^6.1.0"
   },
   "dependencies": {
-    "playwright": "^1.52.0"
+    "playwright": "^1.55.0"
   }
 }

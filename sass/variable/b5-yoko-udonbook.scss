@@ -1,17 +1,18 @@
 @charset "UTF-8";
+
 // 基本フォントサイズ
-$base-font-size: 10pt;
+$base-font-size: 12pt;
 // 基本行送り
-$base-line-height: 1.5rem;
+$base-line-height: 1.4rem;
 
 
 //組み方向
-$writing-mode: vertical-rl;
+$writing-mode: horizontal-tb;
 
 // 行数
-$lines: 14;
+$lines: 35;
 // 1行あたり文字数
-$characters-per-line: 36;
+$characters-per-line: 32;
 // 天
 $ten: 17mm;
 // 地
@@ -22,18 +23,20 @@ $koguchi: 12mm;
 $nodo: 18mm;
 
 //紙のサイズ
-$paper-size: a6;
+$paper-size: b5;
 //塗り足しサイズ
 $bleed-size: 0;
 
 //紙の横幅
-$paper-width: 105mm;
+$paper-width: 182mm;
 //紙の縦幅
-$paper-height: 148mm;
+$paper-height: 257mm;
 //トンボ
 $marks: none;
 
 //コンテンツの横幅
-$content-width: $paper-width - $koguchi - $nodo;
+// $content-width: $paper-width - $koguchi - $nodo;
+$content-width: $base-line-height * $lines;
 //コンテンツの縦幅
-$content-height: $paper-height - $ten - $chi;
+// $content-height: $paper-height - $ten - $chi;
+$content-height: $base-font-size * $characters-per-line;

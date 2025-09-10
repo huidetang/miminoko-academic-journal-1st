@@ -1,14 +1,15 @@
 @charset "UTF-8";
 
-@import '../common/contents-common';
+@use '../common/contents-common';
+@use "../variable/b5-yoko-common";
 
 /* 画像＋キャプション */
 div.image {
   float-reference: page;
   float: right;
   width: 100%;
-  max-width: $content-width;
-  max-height: $content-height;
+  max-width: b5-yoko-common.$content-width;
+  max-height: b5-yoko-common.$content-height;
   box-sizing: border-box;
   writing-mode: horizontal-tb;
 
@@ -16,8 +17,8 @@ div.image {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    max-width: $content-width;
-    max-height: $content-height;
+    max-width: b5-yoko-common.$content-width;
+    max-height: b5-yoko-common.$content-height;
   }
 
   & > p.caption {

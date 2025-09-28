@@ -2,13 +2,16 @@ PREDEF:
   - preface.re
 
 CHAPS:
-  - ReVIEW独自マークアップ言語:
+  - ReVIEW独自マークアップ言語での書き方:
     - how-to-use.re
-  - Markdown:
+  - Markdownでの書き方:
     - markdown.re
-  - Microsoft word:
+  - Microsoft Wordでの書き方:
     - word-ref.re
     - custom-reference.re
+  - Google Documents:
+    - HowToWriteAtGoogleDocument(word).re
+    - HowToWriteAtGoogleDocument(OpenDocument).re
 
 APPENDIX:
 

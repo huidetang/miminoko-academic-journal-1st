@@ -39,7 +39,7 @@ TEXT_OPTIONS = ENV['REVIEW_TEXT_OPTIONS'] || ''
 REVIEW_VSCLI = ENV['REVIEW_VSCLI'] || 'vivliostyle'
 REVIEW_VSCLI_USESANDBOX = ENV['REVIEW_VSCLI_USESANDBOX'] ? '' : '--no-sandbox'
 REVIEW_VSCLI_PDF = ENV['REVIEW_VSCLI_PDF'] || BOOK_PDF
-REVIEW_VSCLI_OPTIONS = ENV['REVIEW_VSCLI_OPTIONS'] || '--preflight press-ready-local --timeout 900'
+REVIEW_VSCLI_OPTIONS = ENV['REVIEW_VSCLI_OPTIONS'] || '--preflight press-ready-local --timeout 3000'
 REVIEW_VSCLI_GRAYSCALE = ENV['REVIEW_VSCLI_GRAYSCALE'] ? '--preflight-option gray-scale' : ''
 
 def build(mode, chapter)

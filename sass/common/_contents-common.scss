@@ -53,13 +53,12 @@ pre {
   margin: 0 auto;
   padding: 1rem;
   box-decoration-break: clone;
+  overflow-wrap: anywhere;
+  font-family: "Cica";
 
-  code {
-    border: 1px #aaa solid;
-    border-radius: 4px;
-    overflow-wrap: anywhere;
-    font-family: "Cica";
-    max-width: 100%;
+  &.cmd {
+    background: #000;
+    color: #fff;
   }
 }
 

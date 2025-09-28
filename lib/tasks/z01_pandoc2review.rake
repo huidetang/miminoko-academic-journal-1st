@@ -26,12 +26,13 @@ def make_mdre(ch, p2r, path)
   source = basedir + ch
   if File.exist?(source) # re file
     FileUtils.cp(source, path)
+  elsif File.exist?(source.sub(/\.re\Z/, '.docx')) # docx file
+    system("pandoc -s #{source.sub(/\.re\Z/, '.docx')} --wrap=none --extract-media=../../images -t gfm -o #{source.sub(/\.re\Z/, '.md')} && #{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}") # rubocop:disable Layout/LineLength
+  elsif File.exist?(source.sub(/\.re\Z/, '.odt')) # odt file
+    ssystem("pandoc -s #{source.sub(/\.re\Z/, '.odt')} --wrap=none --extract-media=../../images -t gfm -o #{source.sub(/\.re\Z/, '.md')} && #{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}") # rubocop:disable Layout/LineLength
   elsif File.exist?(source.sub(/\.re\Z/, '.md')) # md file
     system("#{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}")
-  elsif File.exist?(source.sub(/\.re\Z/, '.docx')) # docx file
-    system("#{p2r} #{source.sub(/\.re\Z/, '.docx')} > #{path}/#{ch}")
-  elsif File.exist?(source.sub(/\.re\Z/, '.odt')) # odt file
-    system("#{p2r} #{source.sub(/\.re\Z/, '.odt')} > #{path}/#{ch}")
+
   end
 end
 
@@ -39,9 +40,7 @@ desc 'run pandoc2review'
 task :pandoc2review do
   path = '_refiles'
   p2r = 'pandoc2review'
-  if File.exist?('../../pandoc2review')
-    p2r = '../../pandoc2review'
-  end
+  p2r = '../../pandoc2review' if File.exist?('../../pandoc2review')
 
   unless File.exist?(path)
     Dir.mkdir(path)
@@ -49,18 +48,18 @@ task :pandoc2review do
   end
 
   catalog = YAML.load_file(ENV['REVIEW_CATALOG_FILE'] || 'catalog.yml')
-  %w(PREDEF CHAPS APPENDIX POSTDEF).each do |block|
-    if catalog[block].kind_of?(Array)
-      catalog[block].each do |ch|
-        if ch.kind_of?(Hash) # Parts
-          ch.each_pair do |k, v|
-            make_mdre(k, p2r, path)
-            # Chapters
-            v.each {|subch| make_mdre(subch, p2r, path) }
-          end
-        elsif ch.kind_of?(String) # Chapters
-          make_mdre(ch, p2r, path)
+  %w[PREDEF CHAPS APPENDIX POSTDEF].each do |block|
+    next unless catalog[block].is_a?(Array)
+
+    catalog[block].each do |ch|
+      if ch.is_a?(Hash) # Parts
+        ch.each_pair do |k, v|
+          make_mdre(k, p2r, path)
+          # Chapters
+          v.each { |subch| make_mdre(subch, p2r, path) }
         end
+      elsif ch.is_a?(String) # Chapters
+        make_mdre(ch, p2r, path)
       end
     end
   end

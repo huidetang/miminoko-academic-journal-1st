@@ -10,8 +10,8 @@ CHAPS:
     - word-ref.re
     - custom-reference.re
   - Google Documents:
-    - HowToWriteAtGoogleDocument(word).re
-    - HowToWriteAtGoogleDocument(OpenDocument).re
+    - HowToWriteAtGoogleDocumentOnWord.re
+    - HowToWriteAtGoogleDocumentOnOpenDocument.re
 
 APPENDIX:
 

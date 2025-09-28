@@ -27,9 +27,9 @@ def make_mdre(ch, p2r, path)
   if File.exist?(source) # re file
     FileUtils.cp(source, path)
   elsif File.exist?(source.sub(/\.re\Z/, '.docx')) # docx file
-    system("pandoc -s #{source.sub(/\.re\Z/, '.docx')} --wrap=none --extract-media=images/#{source.sub(/\.re\Z/)} -t gfm -o #{source.sub(/\.re\Z/, '.md')} && #{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}") # rubocop:disable Layout/LineLength
+    system("pandoc -s #{source.sub(/\.re\Z/, '.docx')} --wrap=none --extract-media=images/#{source} -t gfm -o #{source.sub(/\.re\Z/, '.md')} && #{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}") # rubocop:disable Layout/LineLength
   elsif File.exist?(source.sub(/\.re\Z/, '.odt')) # odt file
-    system("pandoc -s #{source.sub(/\.re\Z/, '.odt')} --wrap=none --extract-media=images#{source.sub(/\.re\Z/)} -t gfm -o #{source.sub(/\.re\Z/, '.md')} && #{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}") # rubocop:disable Layout/LineLength
+    system("pandoc -s #{source.sub(/\.re\Z/, '.odt')} --wrap=none --extract-media=images#{source} -t gfm -o #{source.sub(/\.re\Z/, '.md')} && #{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}") # rubocop:disable Layout/LineLength
   elsif File.exist?(source.sub(/\.re\Z/, '.md')) # md file
     system("#{p2r} #{source.sub(/\.re\Z/, '.md')} > #{path}/#{ch}")
 

@@ -116,11 +116,15 @@ TeX数式形式が使える。
 
 `images` フォルダに配置する必要があるが、パスを指定するときは省略する。
 
+![与謝野晶子](yosano_akiko_is_always_watching_you.png)
+
 ```markdown {caption="Markdownでの画像の貼り方"}
 ![与謝野晶子](yosano_akiko_is_always_watching_you.png)
 ```
 
 width、height、scale の属性が付けられているときには、scale パラメータに変換される。
+
+![与謝野晶子](yosano_akiko_is_always_watching_you.png){scale=2}
 
 ```markdown {caption="Markdownでのスケール指定しての画像の貼り方"}
 ![与謝野晶子](yosano_akiko_is_always_watching_you.png){scale=2}

@@ -2,18 +2,14 @@ PREDEF:
   - preface.re
 
 CHAPS:
-  - ReVIEW独自マークアップ言語での書き方:
+  - 書き方サンプル（本番では消します）:
+    - kakikata.re
     - how-to-use.re
-  - Markdownでの書き方:
     - markdown.re
-  - Microsoft Wordでの書き方:
-    - word-ref.re
-    - custom-reference.re
-  - Google Documents:
-    - HowToWriteAtGoogleDocument.re
 
 APPENDIX:
 
 POSTDEF:
-  - postscript.re
   - bib.re
+  - profile.re
+  - postscript.re

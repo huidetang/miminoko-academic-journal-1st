@@ -116,27 +116,25 @@ TeX数式形式が使える。
 
 `images` フォルダに配置する必要があるが、パスを指定するときは省略する。
 
-![与謝野晶子](yosano_akiko_is_always_watching_you.png)
-
 ```markdown {caption="Markdownでの画像の貼り方"}
 ![与謝野晶子](yosano_akiko_is_always_watching_you.png)
 ```
 
-width、height、scale の属性が付けられているときには、scale パラメータに変換される。
+width、height、scale の属性が付けられているときには、scale パラメータに変換される。 scale パラメーターは紙面の幅に対する割合なので、 `{scale=0.5}` ぐらいがちょうどよいサイズかと思われる。
 
-![与謝野晶子](yosano_akiko_is_always_watching_you.png){scale=2}
+![与謝野晶子](yosano_akiko_is_always_watching_you.png){scale=0.5}
 
 ```markdown {caption="Markdownでのスケール指定しての画像の貼り方"}
-![与謝野晶子](yosano_akiko_is_always_watching_you.png){scale=2}
+![与謝野晶子](yosano_akiko_is_always_watching_you.png){scale=0.5}
 ```
 
 前また後に文字があるときには、インライン画像と見なし、アイコンに変換される。
 
 ```markdown {caption="Markdownでのインライン画像の貼り方"}
-レターパックで ![与謝野晶子](yosano_akiko_is_always_watching_you.png) 送れ
+レターパックで ![与謝野晶子（インライン）](yosano_akiko_is_always_watching_you.png) 送れ
 ```
 
-レターパックで ![与謝野晶子](yosano_akiko_is_always_watching_you.png) 送れ
+レターパックで ![与謝野晶子（インライン）](yosano_akiko_is_always_watching_you.png) 送れ
 
 ## Div と Span
 
@@ -149,6 +147,8 @@ HTML の生タグであるブロック `<div>`、インライン `<span>` の属
 ```
 
 万物のすべての答えは<span class="tcy">42</span>である。
+
+今回は縦書きではないので使う場面はないと思われる。
 
 ## 脚注
 

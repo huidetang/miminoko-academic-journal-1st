@@ -261,12 +261,12 @@ jobs:
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.WEBHOOK_URL }}
-          content: ${{ format('@everyone （{0}）校正版が上がりました。執筆者の皆様、ご確認お願いいたします。', steps.date.outputs.datetime) }}
+          content: "@everyone 校正版が上がりました。執筆者の皆様、ご確認お願いいたします。"
       - name: Discordへのファイルアップロード
         uses: tsickert/discord-webhook@v7.0.0
         with:
           webhook-url: ${{ secrets.WEBHOOK_URL }}
-          filename: book.pdf
+          filename: miminoko-journal.pdf
 
   # udonbook:
   #   # needs: reviewdog-github-check
